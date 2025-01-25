@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'standalone',
   webpack: (config) => {
     config.module.rules.push({
       test: /\.pdf$/,
@@ -10,7 +11,17 @@ const nextConfig: NextConfig = {
       }
     });
     return config;
-  }
+  },
+  images: {
+    unoptimized: true,
+    domains: ['icons8.com'],
+  },
+  reactStrictMode: true,
+  swcMinify: true,
+  compiler: {
+    styledComponents: true,
+    removeConsole: process.env.NODE_ENV !== 'development',
+  },
 };
 
 export default nextConfig;
