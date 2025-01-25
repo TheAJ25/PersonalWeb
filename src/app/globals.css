@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap");
+
+body {
+  background-color: #ffffff;
+  font-family: "Pixelify Sans", monospace;
+}
+
+.glitch-text {
+  position: relative;
+  animation: glitch 1s infinite;
+}
+
+.retro-button {
+  @apply px-4 py-2 w-full text-left;
+  background: #ffffff;
+  border: 2px solid #000;
+  position: relative;
+  transition: all 0.1s ease;
+  font-family: "Pixelify Sans", monospace;
+}
+
+.retro-button:active {
+  background: #e0e0e0;
+  box-shadow: inset 1px 1px 0 0 #000000, inset -1px -1px 0 0 #ffffff;
+  transform: translateY(1px);
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #000000, -0.03em -0.04em 0 #000000,
+      0.025em 0.04em 0 #000000;
+  }
+  15% {
+    text-shadow: 0.05em 0 0 #000000, -0.03em -0.04em 0 #000000,
+      0.025em 0.04em 0 #000000;
+  }
+  16% {
+    text-shadow: -0.05em -0.025em 0 #000000, 0.025em 0.035em 0 #000000,
+      -0.05em -0.05em 0 #000000;
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 #000000, 0.025em 0.035em 0 #000000,
+      -0.05em -0.05em 0 #000000;
+  }
+  50% {
+    text-shadow: 0.05em 0.035em 0 #000000, 0.03em 0 0 #000000,
+      0 -0.04em 0 #000000;
+  }
+  99% {
+    text-shadow: 0.05em 0.035em 0 #000000, 0.03em 0 0 #000000,
+      0 -0.04em 0 #000000;
+  }
+  100% {
+    text-shadow: -0.05em 0 0 #000000, -0.025em -0.04em 0 #000000,
+      -0.04em -0.025em 0 #000000;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+#buttonId {
+  box-shadow: 2px 2px 0 black, -2px -2px 0 black;
+  border: 0px;
+  /* width: 70%; */
+}
+
