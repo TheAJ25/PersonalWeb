@@ -15,10 +15,11 @@ import {
 import Link from "next/link";
 import ScrollingText from "@/Components/ScrollingText";
 import Navbar from "@/Components/Navbar";
+import Footer from "@/Components/Footer";
 
 const MainComponent = ({ projects, blogs }) => {
   return (
-    <div className="flex-1 p-2 ml-[295px] mr-[295px] overflow-y-auto">
+    <div className="flex-1 p-2 ml-[295px] mr-[295px] overflow-y-auto no-scrollbar">
 
       {/* Scrolling Text */}
       <div className="mb-2">
@@ -55,10 +56,10 @@ const MainComponent = ({ projects, blogs }) => {
 
         {/* Experience Section */}
         <section id="experience" className="bg-white border-2 border-black">
-          <div className="bg-black text-white px-4 py-2 flex items-center justify-between">
+          <div className="bg-black text-white px-2 py-2 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Briefcase fontSize="small" />
-              <span>EXPERIENCE.exe</span>
+              <span>EXPERIENCE.exe & EDUCATION.exe</span>
             </div>
             <div className="flex gap-2">
               <button className="w-3 h-3 bg-white rounded-full" />
@@ -66,7 +67,7 @@ const MainComponent = ({ projects, blogs }) => {
               <button className="w-3 h-3 bg-white rounded-full" />
             </div>
           </div>
-          <div className="p-6">
+          <div className="p-4">
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-bold mb-2">Senior Developer @ TechCorp</h3>
@@ -218,6 +219,8 @@ const MainComponent = ({ projects, blogs }) => {
           </div>
         </section>
       </div>
+
+      <Footer />
     </div>
   );
 };

@@ -13,9 +13,9 @@ import resume from '@/assets/Pdfs/Abhijit_Shaw_Resume.pdf';
 
 const Sidebar = () => {
   return (
-    <div className="w-72 bg-white border-2 ml-2 mt-2 border-black fixed h-screen flex flex-col">
+    <div className="w-72 bg-white border-2 ml-2 mt-2 border-black fixed h-[98vh] flex flex-col overflow-auto">
       {/* Header */}
-      <div className="bg-black text-white px-2 py-2 flex items-center justify-between">
+      <div className="bg-black text-white px-2 py-2 flex items-center justify-between sticky top-0 z-10">
         <div className="flex items-center gap-2">
           <PersonIcon fontSize="small" />
           <span>PROFILE.exe</span>
