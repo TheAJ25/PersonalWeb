@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import TerminalIcon from "@mui/icons-material/Terminal";
 import PersonIcon from "@mui/icons-material/Person";
 import DownloadIcon from "@mui/icons-material/Download";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -62,7 +61,7 @@ const Sidebar = () => {
         </div>
         <div className="flex justify-center gap-4">
           <a
-            href="https://github.com/abhijiit" // Replace with your GitHub URL
+            href="https://github.com/TheAJ25" // Replace with your GitHub URL
             target="_blank"
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform"
@@ -70,7 +69,7 @@ const Sidebar = () => {
             <GitHubIcon fontSize="medium" />
           </a>
           <a
-            href="https://linkedin.com/in/abhijiit" // Replace with your LinkedIn URL
+            href="https://www.linkedin.com/in/abhijit-shaw-6314b0221/" // Replace with your LinkedIn URL
             target="_blank"
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform"
@@ -78,7 +77,7 @@ const Sidebar = () => {
             <LinkedInIcon fontSize="medium" />
           </a>
           <a
-            href="https://instagram.com/abhijiit" // Replace with your Instagram URL
+            href="https://www.instagram.com/the_aj25_/" // Replace with your Instagram URL
             target="_blank"
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform"
