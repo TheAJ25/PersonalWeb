@@ -17,6 +17,15 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json()
+    
+    // Validate input
+    if (!body.author || !body.text || !body.position) {
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
+      )
+    }
+
     const testimonial = await prisma.testimonial.create({
       data: {
         author: body.author,
@@ -25,7 +34,11 @@ export async function POST(request: Request) {
       }
     })
     return NextResponse.json(testimonial)
-  } catch {
-    return NextResponse.json({ error: 'Error creating testimonial' }, { status: 500 })
+  } catch (error) {
+    console.error('Error creating testimonial:', error)
+    return NextResponse.json(
+      { error: 'Error creating testimonial. Please check database connection.' },
+      { status: 500 }
+    )
   }
 } 
