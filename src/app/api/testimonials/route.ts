@@ -9,7 +9,7 @@ export async function GET() {
       }
     })
     return NextResponse.json(testimonials)
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json({ error: 'Error fetching testimonials' }, { status: 500 })
   }
 }
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       }
     })
     return NextResponse.json(testimonial)
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json({ error: 'Error creating testimonial' }, { status: 500 })
   }
 } 
