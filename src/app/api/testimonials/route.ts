@@ -9,7 +9,8 @@ export async function GET() {
       }
     })
     return NextResponse.json(testimonials)
-  } catch {
+  } catch (error) {
+    console.error('Database error:', error)
     return NextResponse.json({ error: 'Error fetching testimonials' }, { status: 500 })
   }
 }
@@ -17,6 +18,11 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json()
+    
+    if (!body.author || !body.text || !body.position) {
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
+    }
+
     const testimonial = await prisma.testimonial.create({
       data: {
         author: body.author,
@@ -25,7 +31,8 @@ export async function POST(request: Request) {
       }
     })
     return NextResponse.json(testimonial)
-  } catch {
+  } catch (error) {
+    console.error('Database error:', error)
     return NextResponse.json({ error: 'Error creating testimonial' }, { status: 500 })
   }
 } 
