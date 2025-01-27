@@ -20,7 +20,7 @@
   @apply px-4 py-2 w-full text-left;
   background: #ffffff;
   border: 2px solid #000;
-  position: relative;
+  /* position: relative; */
   transition: all 0.1s ease;
   font-family: "Pixelify Sans", monospace;
 }

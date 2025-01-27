@@ -175,8 +175,8 @@ const RightSidebar = ({ testimonials }) => {
               <button className="w-3 h-3 bg-white rounded-full" />
             </div>
           </div>
-          <div className="p-2">
-            <div className="space-y-2 relative h-32">
+          <div className="p-2 flex flex-col gap-2 justify-between h-[calc(100%-3rem)]">
+            <div className="space-y-2">
               <AnimatePresence>
                 {testimonials.map((testimonial, index) =>
                   index === currentTestimonial ? (
@@ -186,7 +186,6 @@ const RightSidebar = ({ testimonials }) => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.5 }}
-                      className="absolute w-full"
                     >
                       <div className="border-2 border-black">
                         <div className="bg-black text-white flex items-center justify-center px-4 py-2">
@@ -206,7 +205,7 @@ const RightSidebar = ({ testimonials }) => {
             </div>
             <Link
               href="/add-testimonial"
-              className="retro-button mt-10 block hover:bg-black hover:text-white transition-colors duration-700 ease-in-out"
+              className="retro-button block hover:bg-black hover:text-white transition-colors duration-700 ease-in-out"
             >
               <div className="flex items-center justify-between">
                 <span>Add Testimonial</span>
