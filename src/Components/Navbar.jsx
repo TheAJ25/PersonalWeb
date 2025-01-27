@@ -19,7 +19,7 @@ const Navbar = () => {
         ].map((item) => (
           <div
             key={item.id}
-            className="retro-button mb-2 w-full flex justify-center items-center gap-2 px-4 py-2 hover:bg-gray-100"
+            className="retro-button mb-2 w-full flex justify-center items-center gap-2 px-4 py-2 hover:bg-black hover:text-white cursor-pointer transition-colors duration-500"
             onClick={() =>
               document
                 .getElementById(item.id)
