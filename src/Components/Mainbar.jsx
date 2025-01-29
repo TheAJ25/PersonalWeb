@@ -166,7 +166,7 @@ const MainComponent = ({ projects, blogs }) => {
                     <p className="text-sm text-black mb-4 flex-grow">
                       {project.description}
                     </p>
-                    <div className="flex flex-col xs:flex-row gap-1 p-1 xs:p-2 sm:p-4">
+                    <div className="flex flex-col xs:flex-row gap-4 p-1 xs:p-2 sm:p-4">
                       <a
                         href={project.liveDemo}
                         target="_blank"

@@ -78,12 +78,12 @@ const Projects = () => {
                     </div>
 
                     {/* Buttons */}
-                    <div className="flex gap-6 pt-4">
+                    <div className="flex items-center justify-center gap-6 pt-4 w-full">
                       <a
                         href={project.liveDemo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="retro-button flex-1 rounded-md hover:bg-black hover:text-white transition-colors duration-300"
+                        className="border-2 w-1/2 border-black flex items-center justify-center gap-2 p-2 rounded-md hover:bg-black hover:text-white transition-colors duration-300"
                       >
                         <div className="flex items-center justify-center gap-2">
                           <LaunchIcon fontSize="small" />
@@ -94,7 +94,7 @@ const Projects = () => {
                         href={project.sourceCode}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="retro-button flex-1 rounded-md hover:bg-black hover:text-white transition-colors duration-300"
+                        className="border-2 w-1/2 border-black flex items-center justify-center gap-2 p-2 rounded-md hover:bg-black hover:text-white transition-colors duration-300"
                       >
                         <div className="flex items-center justify-center gap-2">
                           <GitHubIcon fontSize="small" />
