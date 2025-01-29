@@ -12,7 +12,7 @@ import resume from '@/assets/Pdfs/Abhijit_Shaw_Resume.pdf';
 
 const Sidebar = () => {
   return (
-    <div className="w-72 bg-white border-2 ml-2 mt-2 border-black fixed h-[98vh] flex flex-col overflow-auto">
+    <div className="">
       {/* Header */}
       <div className="bg-black text-white px-2 py-2 flex items-center justify-between sticky top-0 z-10">
         <div className="flex items-center gap-2">
@@ -30,11 +30,15 @@ const Sidebar = () => {
       <div className="flex flex-col p-2 space-y-6 overflow-y-auto no-scrollbar">
         {/* Profile Item */}
         <div className="border-2 flex flex-col items-center border-black p-4">
-          <Image
-            src={image}
-            alt="Image"
-            className="w-full border-2 border-black rounded-full mb-2 object-cover"
-          />
+          <div className="w-full md:w-48 lg:w-full max-w-[200px] aspect-square relative">
+            <Image
+              src={image}
+              alt="Profile Image"
+              fill
+              className="border-2 border-black rounded-full object-cover"
+              priority
+            />
+          </div>
           <div className="flex flex-col border-b-2 border-black items-center justify-between mb-2">
             <div className="flex items-center gap-2">
               <span className="font-bold text-lg">Abhijit Shaw</span>
@@ -55,7 +59,7 @@ const Sidebar = () => {
       </div>
 
       {/* Add Social Links */}
-      <div className="m-2 p-2 border-2 border-black flex flex-col gap-2">
+      <div className="ml-2 mr-2 mb-2 p-2 border-2 border-black flex flex-col gap-2">
         <div className="flex justify-center items-center font-bold">
           <p>Connect with me</p>
         </div>

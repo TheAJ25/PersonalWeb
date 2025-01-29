@@ -2,10 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Sidebar from "@/Components/Sidebar";
-import Mainbar from "@/Components/Mainbar";
-import RightSidebar from "@/Components/RightSidebar";
-
+import DesktopLayout from "@/Components/layouts/DesktopLayout";
+import MobileLayout from "@/Components/layouts/MobileLayout";
 import { projects } from "@/utils/data/projectData";
 import { blogs } from "@/utils/data/blogData";
 
@@ -15,13 +13,13 @@ const Page = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await fetch('/api/testimonials');
+        const response = await fetch("/api/testimonials");
         if (response.ok) {
           const data = await response.json();
           setTestimonials(data);
         }
       } catch (error) {
-        console.error('Error fetching testimonials:', error);
+        console.error("Error fetching testimonials:", error);
       }
     };
 
@@ -35,13 +33,16 @@ const Page = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 1.3 }}
     >
-      <div className="flex flex-col">
-        <div className="flex flex-row">
-          <Sidebar />
-          <Mainbar projects={projects} blogs={blogs} />
-          <RightSidebar testimonials={testimonials} />
-        </div>
-      </div>
+      <DesktopLayout 
+        projects={projects} 
+        blogs={blogs} 
+        testimonials={testimonials} 
+      />
+      <MobileLayout 
+        projects={projects} 
+        blogs={blogs} 
+        testimonials={testimonials} 
+      />
     </motion.div>
   );
 };

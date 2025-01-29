@@ -42,7 +42,6 @@ const RightSidebar = ({ testimonials }) => {
   }, [testimonials.length]);
 
   return (
-    <div className="w-72 fixed right-0 bg-white border-2 mr-2 mt-2 border-black h-[98vh] flex flex-col overflow-y-auto no-scrollbar">
       <div className="space-y-2">
         {/* Skills Section */}
         <div className="bg-white border-b-2 border-black">
@@ -162,8 +161,8 @@ const RightSidebar = ({ testimonials }) => {
           </div>
         </div>
 
-        {/* Testimonials Section */}
-        <div className="bg-white pt-2">
+        {/* Testimonials Section - Hidden on small screens */}
+        <div className="hidden md:block bg-white pt-2">
           <div className="bg-black text-white px-2 py-2 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <ChatBubbleOutline fontSize="small" />
@@ -215,7 +214,6 @@ const RightSidebar = ({ testimonials }) => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

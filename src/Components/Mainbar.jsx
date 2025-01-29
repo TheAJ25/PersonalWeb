@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import {
-  Info,
   Work as Briefcase,
   FolderOpen,
   Book as BookOpen,
@@ -21,23 +20,25 @@ import LaunchIcon from "@mui/icons-material/Launch";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import About from "@/Components/About";
+import Education from "@/Components/Education";
 
 const MainComponent = ({ projects, blogs }) => {
   const blogContainerRef = useRef(null);
   const scrollTween = useRef(null);
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -46,10 +47,10 @@ const MainComponent = ({ projects, blogs }) => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -57,18 +58,18 @@ const MainComponent = ({ projects, blogs }) => {
       const data = await response.json();
 
       if (response.ok) {
-        alert('Message sent successfully!');
+        alert("Message sent successfully!");
         setFormData({
-          name: '',
-          email: '',
-          message: ''
+          name: "",
+          email: "",
+          message: "",
         });
       } else {
-        throw new Error(data.error || 'Failed to send message');
+        throw new Error(data.error || "Failed to send message");
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert(error.message || 'An error occurred while sending the message');
+      console.error("Error:", error);
+      alert(error.message || "An error occurred while sending the message");
     } finally {
       setIsSubmitting(false);
     }
@@ -101,108 +102,28 @@ const MainComponent = ({ projects, blogs }) => {
   }, []);
 
   return (
-    <div className="flex-1 p-2 ml-[295px] mr-[295px] overflow-y-auto no-scrollbar">
+    <div className="">
       {/* Scrolling Text */}
-      <div className="mb-2">
+      <div className="hidden md:block mb-2">
         <ScrollingText />
       </div>
 
       {/* Navigation Buttons */}
-      <Navbar />
+      <div className="hidden md:block">
+        <Navbar />
+      </div>
+
 
       <div className="max-w-5xl mx-auto space-y-2">
         {/* About Section */}
-        <section id="about" className="bg-white border-2 border-black">
-          <div className="bg-black text-white px-2 py-2 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Info fontSize="small" />
-              <span>ABOUT.exe</span>
-            </div>
-            <div className="flex gap-2">
-              <button className="w-3 h-3 bg-white rounded-full" />
-              <button className="w-3 h-3 bg-white rounded-full" />
-              <button className="w-3 h-3 bg-white rounded-full" />
-            </div>
-          </div>
-          <div className="p-4">
-            <p className="mb-2">Hello, I'm</p>
-            <h1 className="text-4xl mb-4 glitch-text">Abhijit Shaw_</h1>
-            <p className="text-black mb-2">
-              a full-stack developer with a passion for crafting meaningful
-              digital experiences. I see coding as an art form, where every line
-              of code is a brushstroke on the canvas of innovation. Whether it's
-              designing intuitive interfaces or building resilient backends, I
-              love the challenge of transforming ideas into reality.
-            </p>
-            <p className="m-0 p-0">
-              With a heart set on constant growth and a mind buzzing with
-              curiosity, I'm always eager to explore new technologies and push
-              boundaries. Outside the world of code, I find inspiration in
-              digital art, cricket, and traveling to discover stories waiting to
-              be told.
-            </p>
-          </div>
-        </section>
+        <div className="hidden md:block">
+          <About/>
+        </div>
 
         {/* Experience Section */}
-        <section id="experience" className="bg-white border-2 border-black">
-          <div className="bg-black text-white px-2 py-2 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Briefcase fontSize="small" />
-              <span>EXPERIENCE.exe & EDUCATION.exe</span>
-            </div>
-            <div className="flex gap-2">
-              <button className="w-3 h-3 bg-white rounded-full" />
-              <button className="w-3 h-3 bg-white rounded-full" />
-              <button className="w-3 h-3 bg-white rounded-full" />
-            </div>
-          </div>
-          <div className="p-4">
-            <div className="space-y-6">
-              <div className="border-b-2 border-black pb-4">
-                <h3 className="text-xl font-bold mb-2">
-                  B.Tech in Information Technology
-                </h3>
-                <p className="text-black mb-2">
-                  Maulana Abul Kalam Azad University of Technology (2021-2025)
-                </p>
-                <ul className="list-disc ml-5 text-black">
-                  <li>8.3 CGPA (upto 6th semester)</li>
-                  {/* <li>Architected cloud-native solutions using AWS</li>
-                  <li>Mentored junior developers and conducted code reviews</li> */}
-                </ul>
-              </div>
-              <div className="space-y-6">
-                <div className="border-b-2 border-black pb-4">
-                  <h3 className="text-xl font-bold mb-2">
-                    Higher Secondary Education (12th)
-                  </h3>
-                  <p className="text-black mb-2">
-                    Ushumpur Adarsha Uchcha Vidyalaya
-                  </p>
-                  <ul className="list-disc ml-5 text-black">
-                    <li>82.2%</li>
-                    {/* <li>Architected cloud-native solutions using AWS</li>
-                  <li>Mentored junior developers and conducted code reviews</li> */}
-                  </ul>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-2">
-                  Secondary Education (10th)
-                </h3>
-                <p className="text-black mb-2">
-                  Ushumpur Adarsha Uchcha Vidyalaya
-                </p>
-                <ul className="list-disc ml-5 text-black">
-                  <li>87.3%</li>
-                  {/* <li>Implemented CI/CD pipelines and testing strategies</li>
-                  <li>Optimized application performance and user experience</li> */}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+        <div className="hidden md:block">
+          <Education />
+        </div>
 
         {/* Projects Section */}
         <section id="projects" className="bg-white border-2 border-black">
@@ -218,7 +139,7 @@ const MainComponent = ({ projects, blogs }) => {
             </div>
           </div>
           <div className="p-6">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {projects.slice(0, 4).map((project, index) => (
                 <div
                   key={index}
@@ -276,7 +197,7 @@ const MainComponent = ({ projects, blogs }) => {
             <div className="flex justify-center">
               <Link
                 href="/projects"
-                className="mt-6 block p-2 w-[30%] bg-black border-2 border-black text-white hover:bg-white hover:border-black hover:border-2 hover:text-black transition-colors duration-300"
+                className="mt-6 block p-2 w-full md:w-[30%] bg-black border-2 border-black text-white hover:bg-white hover:border-black hover:border-2 hover:text-black transition-colors duration-300"
               >
                 <div className="flex items-center justify-between">
                   <span>See More Projects</span>
@@ -300,22 +221,21 @@ const MainComponent = ({ projects, blogs }) => {
               <button className="w-3 h-3 bg-white rounded-full" />
             </div>
           </div>
-          <div 
+          <div
             ref={blogContainerRef}
             className="p-6 h-[200px] overflow-y-auto no-scrollbar"
           >
             <div className="space-y-4">
               {blogs.map((blog, index) => (
-                <a 
-                  key={index} 
+                <a
+                  key={index}
                   href={blog.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block border-2 border-black transition-transform hover:scale-[1.02] cursor-pointer"
                 >
                   <div className="bg-black text-white px-4 py-2 flex items-center">
-                    <span className="underline flex-1">{blog.title}</span>
-                    <span className="text-sm ml-4">{blog.date}</span>
+                    <span className="underline flex-1">{blog.title} - {blog.date}</span>
                   </div>
                 </a>
               ))}
@@ -339,7 +259,10 @@ const MainComponent = ({ projects, blogs }) => {
           <div className="p-6">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-lg text-black font-bold mb-1">
+                <label
+                  htmlFor="name"
+                  className="block text-lg text-black font-bold mb-1"
+                >
                   Name
                 </label>
                 <input
@@ -353,7 +276,10 @@ const MainComponent = ({ projects, blogs }) => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-lg text-black font-bold mb-1">
+                <label
+                  htmlFor="email"
+                  className="block text-lg text-black font-bold mb-1"
+                >
                   Email
                 </label>
                 <input
@@ -367,7 +293,10 @@ const MainComponent = ({ projects, blogs }) => {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-lg text-black font-bold mb-1">
+                <label
+                  htmlFor="message"
+                  className="block text-lg text-black font-bold mb-1"
+                >
                   Message
                 </label>
                 <textarea
