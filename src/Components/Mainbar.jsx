@@ -166,28 +166,24 @@ const MainComponent = ({ projects, blogs }) => {
                     <p className="text-sm text-black mb-4 flex-grow">
                       {project.description}
                     </p>
-                    <div className="flex gap-4 mt-auto">
+                    <div className="flex flex-col xs:flex-row gap-1 p-1 xs:p-2 sm:p-4">
                       <a
                         href={project.liveDemo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="retro-button flex-1 hover:bg-black hover:text-white transition-colors duration-300"
+                        className="flex-1 flex items-center justify-center gap-1 border-2 border-black px-1 xs:px-2 sm:px-4 py-1 xs:py-2 hover:bg-black hover:text-white transition-colors text-xs xs:text-sm sm:text-base"
                       >
-                        <div className="flex items-center justify-center gap-2">
-                          <LaunchIcon fontSize="small" />
-                          <span>Live Demo</span>
-                        </div>
+                        <LaunchIcon fontSize="small" />
+                        <span>Live Demo</span>
                       </a>
                       <a
                         href={project.sourceCode}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="retro-button flex-1 hover:bg-black hover:text-white transition-colors duration-300"
+                        className="flex-1 flex items-center justify-center gap-1 border-2 border-black px-1 xs:px-2 sm:px-4 py-1 xs:py-2 hover:bg-black hover:text-white transition-colors text-xs xs:text-sm sm:text-base"
                       >
-                        <div className="flex items-center justify-center gap-2">
-                          <GitHubIcon fontSize="small" />
-                          <span>Source Code</span>
-                        </div>
+                        <GitHubIcon fontSize="small" />
+                        <span>Source Code</span>
                       </a>
                     </div>
                   </div>
