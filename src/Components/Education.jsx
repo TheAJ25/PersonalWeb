@@ -18,7 +18,29 @@ const Education = () => {
         </div>
       </div>
       <div className="p-4">
-        <div className="space-y-6">
+        <div className="space-y-2">
+          <div className="border-b-2 border-black pb-4">
+            <h3 className="text-xl font-bold mb-2">
+              Workday Core Integration Intern
+            </h3>
+            <p className="text-black mb-2">
+              Accenture, Bangalore (Feb 2025 – June 2025)
+            </p>
+            <ul className="list-disc ml-5 text-black">
+              <li>
+                Completed training and internship focused on Workday
+                integrations
+              </li>
+              <li>Worked on Core Connectors, EIB, and Workday Studio</li>
+              <li>
+                Contributed to integration solutions in a real-time project
+                environment
+              </li>
+              <li>
+                Collaborated closely with mentors and cross-functional teams
+              </li>
+            </ul>
+          </div>
           <div className="border-b-2 border-black pb-4">
             <h3 className="text-xl font-bold mb-2">
               B.Tech in Information Technology
@@ -27,7 +49,7 @@ const Education = () => {
               Maulana Abul Kalam Azad University of Technology (2021-2025)
             </p>
             <ul className="list-disc ml-5 text-black">
-              <li>8.3 CGPA (upto 6th semester)</li>
+              <li>8.3 CGPA (upto 7th semester)</li>
             </ul>
           </div>
           <div className="space-y-6">

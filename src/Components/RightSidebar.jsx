@@ -37,114 +37,129 @@ const RightSidebar = ({ testimonials }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 3000); // Change every 5 seconds
+    }, 3000); // Change every 3 seconds as per your original code
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
   return (
-      <div className="space-y-2">
-        {/* Skills Section */}
-        <div className="bg-white border-b-2 border-black">
-          <div className="bg-black text-white px-2 py-2 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Build fontSize="small" />
-              <span>SKILLS.exe</span>
-            </div>
-            <div className="flex gap-2">
-              <button className="w-3 h-3 bg-white rounded-full" />
-              <button className="w-3 h-3 bg-white rounded-full" />
-              <button className="w-3 h-3 bg-white rounded-full" />
-            </div>
+    <div className="space-y-2">
+      {/* Skills Section */}
+      <div className="bg-white border-b-2 border-black">
+        <div className="bg-black text-white px-2 py-2 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Build fontSize="small" />
+            <span>SKILLS.exe</span>
           </div>
-          <div className="p-2">
-            <div className="space-y-4">
-              <div>
-                <h3 className="mt-2 text-lg font-bold mb-2">
-                  Technical Skills
-                </h3>
-                <div className="grid grid-cols-6 gap-2">
-                  {[
-                    { name: "JavaScript", icon: javascriptIcon },
-                    { name: "TypeScript", icon: typescriptIcon },
-                    { name: "React JS", icon: reactIcon },
-                    { name: "Next.js", icon: nextjsIcon },
-                    { name: "Node.js", icon: nodejsIcon },
-                    { name: "Express.js", icon: expressIcon },
-                    { name: "MongoDB", icon: mongodbIcon },
-                    { name: "SQL", icon: sqlIcon },
-                    { name: "PostgreSQL", icon: postgresqlIcon },
-                    { name: "HTML", icon: htmlIcon },
-                    { name: "CSS", icon: cssIcon },
-                    { name: "Tailwind CSS", icon: tailwindIcon },
-                    { name: "Redux", icon: reduxIcon },
-                    { name: "Git", icon: gitIcon },
-                    { name: "C++", icon: cppIcon },
-                    { name: "Python", icon: pythonIcon },
-                    { name: "Postman", icon: postmanIcon },
-                  ].map((skill) => (
-                    <div key={skill.name}>
-                      <div className="flex flex-col items-center gap-2 m-0 p-0">
-                        <Image
-                          src={skill.icon}
-                          alt={`${skill.name} icon`}
-                          width={50}
-                          height={50}
-                        />
-                      </div>
+          <div className="flex gap-2">
+            <button className="w-3 h-3 bg-white rounded-full" />
+            <button className="w-3 h-3 bg-white rounded-full" />
+            <button className="w-3 h-3 bg-white rounded-full" />
+          </div>
+        </div>
+        <div className="p-2">
+          <div className="space-y-4">
+            <div>
+              <h3 className="mt-2 text-lg font-bold mb-2">Technical Skills</h3>
+              <div className="grid grid-cols-6 gap-2">
+                {[
+                  { name: "JavaScript", icon: javascriptIcon },
+                  { name: "TypeScript", icon: typescriptIcon },
+                  { name: "React JS", icon: reactIcon },
+                  { name: "Next.js", icon: nextjsIcon },
+                  { name: "Node.js", icon: nodejsIcon },
+                  { name: "Express.js", icon: expressIcon },
+                  { name: "MongoDB", icon: mongodbIcon },
+                  { name: "SQL", icon: sqlIcon },
+                  { name: "PostgreSQL", icon: postgresqlIcon },
+                  { name: "HTML", icon: htmlIcon },
+                  { name: "CSS", icon: cssIcon },
+                  { name: "Tailwind CSS", icon: tailwindIcon },
+                  { name: "Redux", icon: reduxIcon },
+                  { name: "Git", icon: gitIcon },
+                  { name: "C++", icon: cppIcon },
+                  { name: "Python", icon: pythonIcon },
+                  { name: "Postman", icon: postmanIcon },
+                ].map((skill) => (
+                  <div key={skill.name}>
+                    <div className="flex flex-col items-center gap-2 m-0 p-0">
+                      <Image
+                        src={skill.icon}
+                        alt={`${skill.name} icon`}
+                        width={50}
+                        height={50}
+                      />
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
-              <div>
-                <h3 className="text-lg font-bold mb-2">Soft Skills</h3>
-                <div className="space-y-2">
-                  {["Leadership", "Communication", "Problem Solving"].map(
-                    (skill) => (
-                      <div key={skill} className="border-2 border-black p-2">
-                        <span>{skill}</span>
-                      </div>
-                    )
-                  )}
-                </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold mb-2">Soft Skills</h3>
+              <div className="space-y-2">
+                {["Leadership", "Communication", "Problem Solving"].map(
+                  (skill) => (
+                    <div key={skill} className="border-2 border-black p-2">
+                      <span>{skill}</span>
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Certifications Section */}
-        <div className="bg-white pt-2 border-b-2 border-black">
-          <div className="bg-black text-white px-2 py-2 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <EmojiEvents fontSize="small" />
-              <span>CERTIFICATIONS.exe</span>
-            </div>
-            <div className="flex gap-2">
-              <button className="w-3 h-3 bg-white rounded-full" />
-              <button className="w-3 h-3 bg-white rounded-full" />
-              <button className="w-3 h-3 bg-white rounded-full" />
-            </div>
+      {/* Certifications Section */}
+      <div className="bg-white pt-2 border-b-2 border-black">
+        <div className="bg-black text-white px-2 py-2 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <EmojiEvents fontSize="small" />
+            <span>CERTIFICATIONS.exe</span>
           </div>
-          <div className="p-2">
-            <div className="space-y-2">
-              {[
-                {
-                  name: "Programming for Everybody (Getting Started with Python)",
-                  time: "3/2022",
-                  link: "https://www.coursera.org/account/accomplishments/verify/HPWBP5CMJJ4T",
-                },
-                {
-                  name: "Ethics, Technology and Engineering",
-                  time: "2/2022",
-                  link: "https://www.coursera.org/account/accomplishments/verify/U9ACQNRV8288",
-                },
-                {
-                  name: "Teamwork Skills: Communicating Effectively in Groups",
-                  time: "2/2022",
-                  link: "https://www.coursera.org/account/accomplishments/verify/CU9353KGDCKB",
-                },
-              ].map((cert) => (
-                <div key={cert.name} className="border-2 border-black p-2">
-                  <div className="flex justify-between items-center gap-2">
+          <div className="flex gap-2">
+            <button className="w-3 h-3 bg-white rounded-full" />
+            <button className="w-3 h-3 bg-white rounded-full" />
+            <button className="w-3 h-3 bg-white rounded-full" />
+          </div>
+        </div>
+        <div className="p-2">
+          <div className="space-y-2">
+            {[
+              {
+                name: "Accenture – Internship Completion Certificate",
+                time: "6/2025",
+                link: "/Abhijit Shaw- Internship certificate.pdf", // This will correctly point to the public folder
+                isPdf: true, // New flag to indicate it's a PDF
+              },
+              {
+                name: "Programming for Everybody (Getting Started with Python)",
+                time: "3/2022",
+                link: "https://www.coursera.org/account/accomplishments/verify/HPWBP5CMJJ4T",
+              },
+              {
+                name: "Ethics, Technology and Engineering",
+                time: "2/2022",
+                link: "https://www.coursera.org/account/accomplishments/verify/U9ACQNRV8288",
+              },
+              {
+                name: "Teamwork Skills: Communicating Effectively in Groups",
+                time: "2/2022",
+                link: "https://www.coursera.org/account/accomplishments/verify/CU9353KGDCKB",
+              },
+            ].map((cert) => (
+              <div key={cert.name} className="border-2 border-black p-2">
+                <div className="flex justify-between items-center gap-2">
+                  {cert.isPdf ? (
+                    <a
+                      href={cert.link}
+                      className="underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download // Added 'download' attribute for PDF
+                    >
+                      {cert.name}
+                    </a>
+                  ) : (
                     <a
                       href={cert.link}
                       className="underline"
@@ -153,67 +168,70 @@ const RightSidebar = ({ testimonials }) => {
                     >
                       {cert.name}
                     </a>
-                    <span className="text-sm">{cert.time}</span>
-                  </div>
+                  )}
+                  <span className="text-sm">{cert.time}</span>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Testimonials Section - Hidden on small screens */}
-        <div className="hidden md:block bg-white pt-2">
-          <div className="bg-black text-white px-2 py-2 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <ChatBubbleOutline fontSize="small" />
-              <span>TESTIMONIALS.exe</span>
-            </div>
-            <div className="flex gap-2">
-              <button className="w-3 h-3 bg-white rounded-full" />
-              <button className="w-3 h-3 bg-white rounded-full" />
-              <button className="w-3 h-3 bg-white rounded-full" />
-            </div>
-          </div>
-          <div className="p-2 flex flex-col gap-2 justify-between h-[calc(100%-3rem)]">
-            <div className="space-y-2">
-              <AnimatePresence>
-                {testimonials.map((testimonial, index) =>
-                  index === currentTestimonial ? (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <div className="border-2 border-black">
-                        <div className="bg-black text-white flex items-center justify-center px-4 py-2">
-                          <span>{testimonial.author}</span>
-                        </div>
-                        <div className="p-4">
-                          <p className="text-lg font-bold italic">"{testimonial.text}"</p>
-                          <p className="text-sm mt-2 text-gray-600 flex justify-end">
-                            — {testimonial.position}
-                          </p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ) : null
-                )}
-              </AnimatePresence>
-            </div>
-            <Link
-              href="/add-testimonial"
-              className="retro-button block hover:bg-black hover:text-white transition-colors duration-700 ease-in-out"
-            >
-              <div className="flex items-center justify-between">
-                <span>Add Testimonial</span>
-                <ArrowForward fontSize="small" />
               </div>
-            </Link>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* Testimonials Section - Hidden on small screens */}
+      <div className="hidden md:block bg-white pt-2">
+        <div className="bg-black text-white px-2 py-2 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <ChatBubbleOutline fontSize="small" />
+            <span>TESTIMONIALS.exe</span>
+          </div>
+          <div className="flex gap-2">
+            <button className="w-3 h-3 bg-white rounded-full" />
+            <button className="w-3 h-3 bg-white rounded-full" />
+            <button className="w-3 h-3 bg-white rounded-full" />
+          </div>
+        </div>
+        <div className="p-2 flex flex-col gap-2 justify-between h-[calc(100%-3rem)]">
+          <div className="space-y-2">
+            <AnimatePresence>
+              {testimonials.map((testimonial, index) =>
+                index === currentTestimonial ? (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="border-2 border-black">
+                      <div className="bg-black text-white flex items-center justify-center px-4 py-2">
+                        <span>{testimonial.author}</span>
+                      </div>
+                      <div className="p-4">
+                        <p className="text-lg font-bold italic">
+                          "{testimonial.text}"
+                        </p>
+                        <p className="text-sm mt-2 text-gray-600 flex justify-end">
+                          — {testimonial.position}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ) : null
+              )}
+            </AnimatePresence>
+          </div>
+          <Link
+            href="/add-testimonial"
+            className="retro-button block hover:bg-black hover:text-white transition-colors duration-700 ease-in-out"
+          >
+            <div className="flex items-center justify-between">
+              <span>Add Testimonial</span>
+              <ArrowForward fontSize="small" />
+            </div>
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 };
 
