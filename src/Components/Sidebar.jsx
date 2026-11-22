@@ -43,7 +43,7 @@ const Sidebar = () => {
             <div className="flex items-center gap-2">
               <span className="font-bold text-lg">Abhijit Shaw</span>
             </div>
-            <span className="text-black">Full Stack Developer</span>
+            <span className="text-black">Software Developer</span>
           </div>
           <p className="text-lg text-black">Kolkata, India</p>
 

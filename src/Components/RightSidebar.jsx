@@ -12,7 +12,8 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 
-// Import SVG icons
+// Import local SVG icons
+import cppIcon from "@/assets/Images/icons8-c.svg";
 import javascriptIcon from "@/assets/Images/icons8-javascript.svg";
 import typescriptIcon from "@/assets/Images/icons8-typescript.svg";
 import reactIcon from "@/assets/Images/icons8-react.svg";
@@ -22,13 +23,9 @@ import expressIcon from "@/assets/Images/icons8-express-js.svg";
 import mongodbIcon from "@/assets/Images/icons8-mongodb.svg";
 import sqlIcon from "@/assets/Images/icons8-mysql.svg";
 import postgresqlIcon from "@/assets/Images/icons8-postgresql.svg";
-import htmlIcon from "@/assets/Images/icons8-html.svg";
-import cssIcon from "@/assets/Images/icons8-css.svg";
 import tailwindIcon from "@/assets/Images/icons8-tailwind-css.svg";
 import reduxIcon from "@/assets/Images/icons8-redux.svg";
 import gitIcon from "@/assets/Images/icons8-git.svg";
-import cppIcon from "@/assets/Images/icons8-c.svg";
-import pythonIcon from "@/assets/Images/icons8-python.svg";
 import postmanIcon from "@/assets/Images/icons8-postman-api.svg";
 
 const RightSidebar = ({ testimonials }) => {
@@ -40,6 +37,61 @@ const RightSidebar = ({ testimonials }) => {
     }, 3000); // Change every 3 seconds as per your original code
     return () => clearInterval(interval);
   }, [testimonials.length]);
+
+  const technicalSkills = [
+    {
+      name: "C#",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+      isRemote: true,
+    },
+    {
+      name: ".NET Core",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg",
+      isRemote: true,
+    },
+    {
+      name: "Angular",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg",
+      isRemote: true,
+    },
+    { name: "TypeScript", icon: typescriptIcon },
+    { name: "JavaScript", icon: javascriptIcon },
+    { name: "React JS", icon: reactIcon },
+    { name: "Next.js", icon: nextjsIcon },
+    { name: "Node.js", icon: nodejsIcon },
+    { name: "Express.js", icon: expressIcon },
+    {
+      name: "Microsoft Azure",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg",
+      isRemote: true,
+    },
+    {
+      name: "C++",
+      icon: cppIcon,
+    },
+    {
+      name: "Azure SQL",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg",
+      isRemote: true,
+    },
+    { name: "PostgreSQL", icon: postgresqlIcon },
+    { name: "MongoDB", icon: mongodbIcon },
+    { name: "SQL", icon: sqlIcon },
+    { name: "Redux", icon: reduxIcon },
+    { name: "Tailwind CSS", icon: tailwindIcon },
+    {
+      name: "Swagger",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg",
+      isRemote: true,
+    },
+    { name: "Postman", icon: postmanIcon },
+    { name: "Git", icon: gitIcon },
+    {
+      name: "Azure DevOps",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg",
+      isRemote: true,
+    },
+  ];
 
   return (
     <div className="space-y-2">
@@ -61,33 +113,24 @@ const RightSidebar = ({ testimonials }) => {
             <div>
               <h3 className="mt-2 text-lg font-bold mb-2">Technical Skills</h3>
               <div className="grid grid-cols-6 gap-2">
-                {[
-                  { name: "JavaScript", icon: javascriptIcon },
-                  { name: "TypeScript", icon: typescriptIcon },
-                  { name: "React JS", icon: reactIcon },
-                  { name: "Next.js", icon: nextjsIcon },
-                  { name: "Node.js", icon: nodejsIcon },
-                  { name: "Express.js", icon: expressIcon },
-                  { name: "MongoDB", icon: mongodbIcon },
-                  { name: "SQL", icon: sqlIcon },
-                  { name: "PostgreSQL", icon: postgresqlIcon },
-                  { name: "HTML", icon: htmlIcon },
-                  { name: "CSS", icon: cssIcon },
-                  { name: "Tailwind CSS", icon: tailwindIcon },
-                  { name: "Redux", icon: reduxIcon },
-                  { name: "Git", icon: gitIcon },
-                  { name: "C++", icon: cppIcon },
-                  { name: "Python", icon: pythonIcon },
-                  { name: "Postman", icon: postmanIcon },
-                ].map((skill) => (
-                  <div key={skill.name}>
+                {technicalSkills.map((skill) => (
+                  <div key={skill.name} title={skill.name}>
                     <div className="flex flex-col items-center gap-2 m-0 p-0">
-                      <Image
-                        src={skill.icon}
-                        alt={`${skill.name} icon`}
-                        width={50}
-                        height={50}
-                      />
+                      {skill.isRemote ? (
+                        <img
+                          src={skill.icon}
+                          alt={`${skill.name} icon`}
+                          width={50}
+                          height={50}
+                        />
+                      ) : (
+                        <Image
+                          src={skill.icon}
+                          alt={`${skill.name} icon`}
+                          width={50}
+                          height={50}
+                        />
+                      )}
                     </div>
                   </div>
                 ))}
@@ -96,13 +139,15 @@ const RightSidebar = ({ testimonials }) => {
             <div>
               <h3 className="text-lg font-bold mb-2">Soft Skills</h3>
               <div className="space-y-2">
-                {["Leadership", "Communication", "Problem Solving"].map(
-                  (skill) => (
-                    <div key={skill} className="border-2 border-black p-2">
-                      <span>{skill}</span>
-                    </div>
-                  )
-                )}
+                {[
+                  "System Ownership & RCA",
+                  "Cross-Team Collaboration",
+                  "Agile & Release Delivery",
+                ].map((skill) => (
+                  <div key={skill} className="border-2 border-black p-2">
+                    <span>{skill}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -126,25 +171,30 @@ const RightSidebar = ({ testimonials }) => {
           <div className="space-y-2">
             {[
               {
+                name: "Microsoft Certified: Azure Administrator Associate (AZ-104)",
+                time: "6/2026",
+                link: "https://learn.microsoft.com/api/credentials/share/en-us/ShawAbhijit-2542/9ADCB884F35CFDAA?sharingId=96B93C59B2D97791",
+              },
+              {
+                name: "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
+                time: "2025",
+                link: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=FDBE4ED2076F0594D8277D00EAFC9CAEF6395BA61B4C8858EFBF6BF26336C375",
+              },
+              {
+                name: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+                time: "2025",
+                link: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=FDA290693ED72009951E714D05B6AA32CD2B7069B5951134C83948CC1760C5E1",
+              },
+              {
+                name: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
+                time: "2025",
+                link: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=A4FC190C273CF3C1EE030C9505B559C7EC811971ABA95B2660F6FC9F5C7F59EC",
+              },
+              {
                 name: "Accenture – Internship Completion Certificate",
                 time: "6/2025",
-                link: "/Abhijit Shaw- Internship certificate.pdf", // This will correctly point to the public folder
-                isPdf: true, // New flag to indicate it's a PDF
-              },
-              {
-                name: "Programming for Everybody (Getting Started with Python)",
-                time: "3/2022",
-                link: "https://www.coursera.org/account/accomplishments/verify/HPWBP5CMJJ4T",
-              },
-              {
-                name: "Ethics, Technology and Engineering",
-                time: "2/2022",
-                link: "https://www.coursera.org/account/accomplishments/verify/U9ACQNRV8288",
-              },
-              {
-                name: "Teamwork Skills: Communicating Effectively in Groups",
-                time: "2/2022",
-                link: "https://www.coursera.org/account/accomplishments/verify/CU9353KGDCKB",
+                link: "/Abhijit Shaw- Internship certificate.pdf",
+                isPdf: true,
               },
             ].map((cert) => (
               <div key={cert.name} className="border-2 border-black p-2">
@@ -155,7 +205,7 @@ const RightSidebar = ({ testimonials }) => {
                       className="underline"
                       target="_blank"
                       rel="noopener noreferrer"
-                      download // Added 'download' attribute for PDF
+                      download
                     >
                       {cert.name}
                     </a>
@@ -216,7 +266,7 @@ const RightSidebar = ({ testimonials }) => {
                       </div>
                     </div>
                   </motion.div>
-                ) : null
+                ) : null,
               )}
             </AnimatePresence>
           </div>
@@ -241,7 +291,7 @@ RightSidebar.propTypes = {
       author: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
       position: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
 };
 

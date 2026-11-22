@@ -18,21 +18,22 @@ const About = () => {
         </div>
       </div>
       <div className="p-4">
-        <p className="mb-2">Hello, I'm</p>
+        <p className="mb-2">Hello, I&apos;m</p>
         <h1 className="text-4xl mb-4 glitch-text">Abhijit Shaw_</h1>
         <p className="text-black mb-2">
-          a full-stack developer with a passion for crafting meaningful
-          digital experiences. I see coding as an art form, where every line
-          of code is a brushstroke on the canvas of innovation. Whether it's
-          designing intuitive interfaces or building resilient backends, I
-          love the challenge of transforming ideas into reality.
+          a software engineer who treats code like a craft—where clean
+          architecture meets intuitive design. From building real-time
+          collaborative canvases and interactive algorithm visualizers to
+          engineering secure, cloud-backed enterprise systems, I love turning
+          complex ideas into fast, reliable software across the JavaScript,
+          TypeScript, and .NET ecosystems.
         </p>
         <p className="m-0 p-0">
-          With a heart set on constant growth and a mind buzzing with
-          curiosity, I'm always eager to explore new technologies and push
-          boundaries. Outside the world of code, I find inspiration in
-          digital art, cricket, and traveling to discover stories waiting to
-          be told.
+          With a curious mind and an eye for detail, I enjoy bridging creative
+          frontend experiences in React, Next.js, and Angular with resilient
+          backends in Node.js, C#, and the cloud. Outside the terminal, I find
+          inspiration in digital art, sports, music and traveling to discover new
+          stories waiting to be told.
         </p>
       </div>
     </section>
